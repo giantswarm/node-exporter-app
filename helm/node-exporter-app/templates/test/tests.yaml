@@ -1,3 +1,4 @@
+{{ if .Values.e2e }}
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -8,3 +9,4 @@ data:
         curl --connect-timeout 10 --retry 12 --retry-delay 10 {{ .Values.name }}.{{ .Values.namespace }}:{{ .Values.port }}/metrics | \
         grep node_scrape.*success.*cpu.*1
     }
+{{- end -}}
