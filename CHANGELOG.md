@@ -5,20 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project's packages adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-
-## [v1.2.0] 2020-01-08
+## [1.2.0] 2020-01-08
 
 ### Changed
 
 - Change Priority Class to `system-node-critical`
 
-## [v1.1.1] 2019-12-18
+## [1.1.1] 2019-12-18
 
 ### Changed
 
 - Updated dependencies to support Kubernetes 1.16.
 
-## [v1.1.0] 2019-11-20
+## [1.1.0] 2019-11-20
 
 Note: Version number 1.0.0 was skipped to align the version with other default apps.
 
@@ -26,13 +25,13 @@ Note: Version number 1.0.0 was skipped to align the version with other default a
 
 - Updated to node-exporter version 0.18.1.
 
-## [v0.6.0] 2019-10-02
+## [0.6.0] 2019-10-02
 
 ### Changed 
 
 - Migrated to be deployed via an app CR not a chartconfig CR.
 
-## [v0.5.1] 2019-07-17
+## [0.5.1] 2019-07-17
 
 ### Changed
 
@@ -41,13 +40,13 @@ Note: Version number 1.0.0 was skipped to align the version with other default a
 - Run node-exporter as root user to get proper permissions.
 - Remove CPU limits, decrease CPU requests.
 
-## [v0.4.1] 2019-06-28
+## [0.4.1] 2019-06-28
 
 ### Fixed
 
 - Fix systemd collector D-Bus connection. https://github.com/giantswarm/kubernetes-node-exporter/pull/44
 
-## [v0.4.0] 2019-06-14
+## [0.4.0] 2019-06-14
 
 ### Changed
 
@@ -57,13 +56,13 @@ Note: Version number 1.0.0 was skipped to align the version with other default a
 
 - Fix monitored file system mount points.
 
-## [v0.3.0] 2019-05-24
+## [0.3.0] 2019-05-24
 
 ### Changed
 
 - Upgrade to node-exporter 0.18.0.
 
-## [v0.2.0] 2019-05-17
+## [0.2.0] 2019-05-17
 
 ### Added
 
@@ -71,12 +70,12 @@ Note: Version number 1.0.0 was skipped to align the version with other default a
 - Security context with non-root user (`nobody`) for running node-exporter inside container.
 
 [Unreleased]: https://github.com/giantswarm/kubernetes-node-exporter/compare/v1.2.0...HEAD
-[v1.2.0]: https://github.com/giantswarm/node-exporter-app/compare/v1.1.1...v1.2.0
-[v1.1.1]: https://github.com/giantswarm/node-exporter-app/compare/v1.1.0...v1.1.1
-[v1.1.0]: https://github.com/giantswarm/node-exporter-app/compare/v0.6.0...v1.1.0
-[v0.6.0]: https://github.com/giantswarm/node-exporter-app/releases/tag/v0.6.0
-[v0.5.1]: https://github.com/giantswarm/kubernetes-node-exporter/compare/v0.4.1...v0.5.1
-[v0.4.1]: https://github.com/giantswarm/kubernetes-node-exporter/compare/v0.4.0...v0.4.1
-[v0.4.0]: https://github.com/giantswarm/kubernetes-node-exporter/compare/v0.3.0...v0.4.0
-[v0.3.0]: https://github.com/giantswarm/kubernetes-node-exporter/compare/v0.2.0...v0.3.0
-[v0.2.0]: https://github.com/giantswarm/kubernetes-node-exporter/releases/tag/v0.2.0
+[1.2.0]: https://github.com/giantswarm/node-exporter-app/compare/v1.1.1...v1.2.0
+[1.1.1]: https://github.com/giantswarm/node-exporter-app/compare/v1.1.0...v1.1.1
+[1.1.0]: https://github.com/giantswarm/node-exporter-app/compare/v0.6.0...v1.1.0
+[0.6.0]: https://github.com/giantswarm/node-exporter-app/releases/tag/v0.6.0
+[0.5.1]: https://github.com/giantswarm/kubernetes-node-exporter/compare/v0.4.1...v0.5.1
+[0.4.1]: https://github.com/giantswarm/kubernetes-node-exporter/compare/v0.4.0...v0.4.1
+[0.4.0]: https://github.com/giantswarm/kubernetes-node-exporter/compare/v0.3.0...v0.4.0
+[0.3.0]: https://github.com/giantswarm/kubernetes-node-exporter/compare/v0.2.0...v0.3.0
+[0.2.0]: https://github.com/giantswarm/kubernetes-node-exporter/releases/tag/v0.2.0
