@@ -14,7 +14,7 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 ### Updated
 
 - Updated node-exporter version to 1.0.1.
-
+- Newly disabled collectors: powersupplyclass, schedstat, udp_queues.
 
 ## [1.2.0] 2020-01-08
 
