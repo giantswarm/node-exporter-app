@@ -28,3 +28,58 @@ workflows:
                 - master
           requires:
             - push-to-default-app-catalog
+
+      - architect/push-to-app-catalog:
+          context: architect
+          name: push-node-exporter-to-control-plane-app-catalog
+          app_catalog: "control-plane-catalog"
+          app_catalog_test: "control-plane-test-catalog"
+          chart: "node-exporter-app"
+          filters:
+            tags:
+              only: /^v.*/
+
+      - architect/push-to-app-collection:
+          context: architect
+          name: push-node-exporter-to-aws-app-collection
+          app_name: "node-exporter-app"
+          app_namespace: "monitoring"
+          app_collection_repo: "aws-app-collection"
+          unique: "true"
+          requires:
+            - push-node-exporter-to-control-plane-app-catalog
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /^v.*/
+
+      - architect/push-to-app-collection:
+          context: architect
+          name: push-node-exporter-to-azure-app-collection
+          app_name: "node-exporter-app"
+          app_namespace: "monitoring"
+          app_collection_repo: "azure-app-collection"
+          unique: "true"
+          requires:
+            - push-node-exporter-to-control-plane-app-catalog
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /^v.*/
+
+      - architect/push-to-app-collection:
+          context: architect
+          name: push-node-exporter-to-kvm-app-collection
+          app_name: "node-exporter-app"
+          app_namespace: "monitoring"
+          app_collection_repo: "kvm-app-collection"
+          unique: "true"
+          requires:
+            - push-node-exporter-to-control-plane-app-catalog
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /^v.*/
