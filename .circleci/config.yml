@@ -28,6 +28,7 @@ workflows:
                 - master
           requires:
             - push-to-default-app-catalog
+            - push-node-exporter-to-control-plane-app-catalog
 
       - architect/push-to-app-catalog:
           context: architect
