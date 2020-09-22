@@ -21,6 +21,7 @@ workflows:
           context: architect
           name: basic-integration-test
           test-dir: "integration/test/basic"
+          env-file: "integration/config/.env"
           filters:
             # Do not trigger the job on merge to master.
             branches:
