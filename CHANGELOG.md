@@ -8,7 +8,6 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 ## [Unreleased]
 
 ### Changed
--
 - Updated helm chart to use resource helpers, more precise labels.
 - Deploy `node-exporter-app` on installations as part of app collection.
 
