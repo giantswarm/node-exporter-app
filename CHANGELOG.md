@@ -7,6 +7,10 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ## [Unreleased]
 
+### Changed
+- Updated helm chart to use resource helpers, more precise labels.
+- Added CI steps to push to control plane catalog/collection.
+
 ## [1.3.0] - 2020-07-23
 
 ### Added
@@ -40,7 +44,7 @@ Note: Version number 1.0.0 was skipped to align the version with other default a
 
 ## [0.6.0] 2019-10-02
 
-### Changed 
+### Changed
 
 - Migrated to be deployed via an app CR not a chartconfig CR.
 
