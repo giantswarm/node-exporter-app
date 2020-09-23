@@ -10,10 +10,6 @@ metadata:
     prometheus.io/port: "{{ .Values.port  }}"
     prometheus.io/scheme: "http"
     prometheus.io/scrape: "true"
-    # TODO: decide if this is needed
-    # giantswarm.io/monitoring-path: "metrics"
-    # giantswarm.io/monitoring-port: "{{ .Values.port  }}"
-    # giantswarm.io/monitoring: "true"
 spec:
   ports:
   - port: {{ .Values.port }}
