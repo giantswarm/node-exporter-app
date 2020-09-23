@@ -19,7 +19,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
   name: {{ include "resource.default.name" . }}
-  namespace: kube-system
+  namespace: {{ include "resource.default.namespace" . }}
   labels:
     {{- include "labels.common" . | nindent 4 }}
     giantswarm.io/service-type: "managed"
