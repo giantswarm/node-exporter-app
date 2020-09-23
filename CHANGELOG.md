@@ -8,8 +8,9 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 ## [Unreleased]
 
 ### Changed
+-
 - Updated helm chart to use resource helpers, more precise labels.
-- Added CI steps to push to control plane catalog/collection.
+- Deploy `node-exporter-app` on installations as part of app collection.
 
 ## [1.3.0] - 2020-07-23
 
