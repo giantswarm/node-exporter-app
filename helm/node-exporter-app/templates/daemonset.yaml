@@ -66,10 +66,12 @@ spec:
         - '--collector.vmstat'
         - '--collector.xfs'
 
+        - '--no-collector.btrfs'
         - '--no-collector.diskstats'
         - '--no-collector.infiniband'
         - '--no-collector.ipvs'
         - '--no-collector.powersupplyclass'
+        - '--no-collector.rapl'
         - '--no-collector.schedstat'
         - '--no-collector.softnet'
         - '--no-collector.textfile'
