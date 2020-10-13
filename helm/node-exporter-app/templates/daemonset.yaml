@@ -67,7 +67,11 @@ spec:
         - '--collector.xfs'
 
         - '--no-collector.btrfs'
+        {{- if eq (include "provider" .) "azure" }}
+        - '--collector.diskstats'
+        {{- else }}
         - '--no-collector.diskstats'
+        {{- end }}
         - '--no-collector.infiniband'
         - '--no-collector.ipvs'
         - '--no-collector.powersupplyclass'
