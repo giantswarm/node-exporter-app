@@ -54,9 +54,7 @@ spec:
         - '--collector.entropy'
         - '--collector.filefd'
         - '--collector.filesystem'
-        - '--collector.hwmon'
         - '--collector.loadavg'
-        - '--collector.mdadm'
         - '--collector.meminfo'
         - '--collector.netdev'
         - '--collector.netstat'
@@ -70,11 +68,16 @@ spec:
         - '--collector.xfs'
 
         - '--no-collector.btrfs'
+        - '--no-collector.bonding'
         {{- if ne (include "provider" .) "azure" }}
         - '--no-collector.diskstats'
         {{- end }}
+        - '--no-collector.hwmon'
         - '--no-collector.infiniband'
         - '--no-collector.ipvs'
+        - '--no-collector.mdadm'
+        - '--no-collector.nfs'
+        - '--no-collector.nfsd'
         - '--no-collector.powersupplyclass'
         - '--no-collector.rapl'
         - '--no-collector.schedstat'
