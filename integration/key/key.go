@@ -11,11 +11,11 @@ func CRName() string {
 }
 
 func DefaultCatalogName() string {
-	return "default-catalog"
+	return "default"
 }
 
 func DefaultTestCatalogName() string {
-	return "default-test-catalog"
+	return "default-test"
 }
 
 func Namespace() string {
