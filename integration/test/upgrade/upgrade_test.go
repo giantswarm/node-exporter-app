@@ -8,10 +8,9 @@ import (
 
 	"github.com/giantswarm/apptest"
 
-	"github.com/giantswarm/app-exporter/integration/env"
-	"github.com/giantswarm/app-exporter/integration/key"
-	"github.com/giantswarm/app-exporter/integration/setup"
-	"github.com/giantswarm/app-exporter/pkg/project"
+	"github.com/giantswarm/node-exporter-app/integration/env"
+	"github.com/giantswarm/node-exporter-app/integration/key"
+	"github.com/giantswarm/node-exporter-app/integration/setup"
 )
 
 var (
@@ -34,15 +33,15 @@ func TestUpgrade(t *testing.T) {
 	ctx := context.Background()
 
 	currentApp := apptest.App{
-		CatalogName:   key.ControlPlaneCatalogName(),
-		Name:          project.Name(),
+		CatalogName:   key.DefaultCatalogName(),
+		Name:          key.CRName(),
 		Namespace:     key.Namespace(),
 		WaitForDeploy: true,
 	}
 
 	desiredApp := apptest.App{
-		CatalogName:   key.ControlPlaneTestCatalogName(),
-		Name:          project.Name(),
+		CatalogName:   key.DefaultTestCatalogName(),
+		Name:          key.CRName(),
 		Namespace:     key.Namespace(),
 		SHA:           env.CircleSHA(),
 		WaitForDeploy: true,
