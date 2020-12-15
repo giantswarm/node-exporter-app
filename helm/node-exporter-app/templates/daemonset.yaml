@@ -11,6 +11,7 @@ spec:
     type: RollingUpdate
   selector:
     matchLabels:
+      t: test
       {{- include "labels.selector" . | nindent 6 }}
   template:
     metadata:
