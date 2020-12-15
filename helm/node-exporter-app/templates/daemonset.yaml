@@ -17,6 +17,7 @@ spec:
     metadata:
       name: {{ include "resource.default.name" . }}
       labels:
+        t: test
         {{- include "labels.common" . | nindent 8 }}
         giantswarm.io/service-type: "managed"
     spec:
