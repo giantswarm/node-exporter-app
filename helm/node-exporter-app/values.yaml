@@ -16,7 +16,7 @@ groupID: 0
 image:
   registry: docker.io
   name: giantswarm/node-exporter
-  tag: v1.0.1-giantswarm
+  tag: v1.3.1-giantswarm
 
 resources:
   limits:

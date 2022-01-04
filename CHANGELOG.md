@@ -7,6 +7,10 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ## [Unreleased]
 
+### Updated
+
+- Updated node-exporter version to 1.3.1.
+
 ## [1.8.0] - 2021-08-12
 
 ### Changed
