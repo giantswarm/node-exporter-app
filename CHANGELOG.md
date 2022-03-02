@@ -7,6 +7,11 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ## [Unreleased]
 
+### Changed
+
+- Disable the fibrechannel collector.
+- Disable the tapestats collector.
+
 ## [1.9.0] - 2022-01-04
 
 ### Updated

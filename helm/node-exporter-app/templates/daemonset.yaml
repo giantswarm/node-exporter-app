@@ -83,6 +83,8 @@ spec:
         - '--no-collector.udp_queues'
         - '--no-collector.wifi'
         - '--no-collector.zfs'
+        - '--no-collector.tapestats'
+        - '--no-collector.fibrechannel'
         livenessProbe:
           httpGet:
             path: /
