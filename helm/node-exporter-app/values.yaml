@@ -34,3 +34,6 @@ test:
 isManagementCluster: false
 registry:
   domain: docker.io
+
+disableConntrackCollector: false
+disableNvmeCollector: false

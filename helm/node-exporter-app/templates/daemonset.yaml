@@ -49,7 +49,6 @@ spec:
 
         - '--collector.arp'
         - '--collector.bcache'
-        - '--collector.conntrack'
         - '--collector.cpu'
         - '--collector.edac'
         - '--collector.entropy'
@@ -85,6 +84,14 @@ spec:
         - '--no-collector.zfs'
         - '--no-collector.tapestats'
         - '--no-collector.fibrechannel'
+        {{- if .Values.disableConntrackCollector }}
+        - '--no-collector.conntrack'
+        {{- else }}
+        - '--collector.conntrack'
+        {{- end }}
+        {{- if .Values.disableNvmeCollector }}
+        - '--no-collector.nvme'
+        {{- end }}                
         livenessProbe:
           httpGet:
             path: /
