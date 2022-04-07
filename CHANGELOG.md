@@ -7,6 +7,10 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ## [Unreleased]
 
+### Added
+
+- Add options to be able to disable `nvme` and `conntrack` collectors.
+
 ## [1.10.0] - 2022-03-02
 
 ### Changed
