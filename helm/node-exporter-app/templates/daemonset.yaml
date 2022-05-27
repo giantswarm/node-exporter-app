@@ -50,6 +50,7 @@ spec:
         - '--collector.arp'
         - '--collector.bcache'
         - '--collector.cpu'
+        - '--collector.diskstats'
         - '--collector.edac'
         - '--collector.entropy'
         - '--collector.filefd'
@@ -70,7 +71,6 @@ spec:
         - '--collector.xfs'
 
         - '--no-collector.btrfs'
-        - '--no-collector.diskstats'
         - '--no-collector.infiniband'
         - '--no-collector.ipvs'
         - '--no-collector.powersupplyclass'

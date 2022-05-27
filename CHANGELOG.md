@@ -7,9 +7,13 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ## [Unreleased]
 
+### Changed
+
+- Enabled `diskstats` collector.
+
 ## [1.11.0] - 2022-04-07
 
-### Added
+### Added
 
 - Add options to be able to disable `nvme` and `conntrack` collectors.
 
