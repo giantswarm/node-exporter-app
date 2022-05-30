@@ -7,6 +7,8 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ## [Unreleased]
 
+## [1.12.0] - 2022-05-30
+
 ### Changed
 
 - Enabled `diskstats` collector.
@@ -161,7 +163,8 @@ Note: Version number 1.0.0 was skipped to align the version with other default a
 - Separate pod security policy for node-exporter and node-exporter-migration workloads.
 - Security context with non-root user (`nobody`) for running node-exporter inside container.
 
-[Unreleased]: https://github.com/giantswarm/node-exporter-app/compare/v1.11.0...HEAD
+[Unreleased]: https://github.com/giantswarm/node-exporter-app/compare/v1.12.0...HEAD
+[1.12.0]: https://github.com/giantswarm/node-exporter-app/compare/v1.11.0...v1.12.0
 [1.11.0]: https://github.com/giantswarm/node-exporter-app/compare/v1.10.0...v1.11.0
 [1.10.0]: https://github.com/giantswarm/node-exporter-app/compare/v1.9.0...v1.10.0
 [1.9.0]: https://github.com/giantswarm/node-exporter-app/compare/v1.8.0...v1.9.0
