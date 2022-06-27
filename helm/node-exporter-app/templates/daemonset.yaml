@@ -91,7 +91,9 @@ spec:
         {{- end }}
         {{- if .Values.disableNvmeCollector }}
         - '--no-collector.nvme'
-        {{- end }}                
+        {{- end }}
+
+        - '--collector.filesystem.mount-points-exclude=boot'
         livenessProbe:
           httpGet:
             path: /

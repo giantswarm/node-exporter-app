@@ -7,6 +7,10 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ## [Unreleased]
 
+### Changed
+
+- Disable boot partition from the `filesystem` exporter.
+
 ## [1.12.0] - 2022-05-30
 
 ### Changed
