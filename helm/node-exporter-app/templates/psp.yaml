@@ -1,34 +1,50 @@
+{{- if .Values.rbac.create }}
+{{- if .Values.rbac.pspEnabled }}
 apiVersion: policy/v1beta1
 kind: PodSecurityPolicy
 metadata:
-  name: {{ include "resource.psp.name" . }}
-  labels:
-    {{- include "labels.common" . | nindent 4 }}
-    giantswarm.io/service-type: "managed"
+  name: {{ template "prometheus-node-exporter.fullname" . }}
+  namespace: {{ template "prometheus-node-exporter.namespace" . }}
+  labels: {{ include "prometheus-node-exporter.labels" . | indent 4 }}
+{{- if .Values.rbac.pspAnnotations }}
+  annotations:
+{{ toYaml .Values.rbac.pspAnnotations | indent 4 }}
+{{- end}}
 spec:
   privileged: false
-  allowPrivilegeEscalation: false
+  # Allow core volume types.
+  volumes:
+    - 'configMap'
+    - 'emptyDir'
+    - 'projected'
+    - 'secret'
+    - 'downwardAPI'
+    - 'persistentVolumeClaim'
+    - 'hostPath'
+  hostNetwork: true
+  hostIPC: false
+  hostPID: true
+  hostPorts:
+    - min: 0
+      max: 65535
   runAsUser:
-    rule: RunAsAny
+    # Permits the container to run with root privileges as well.
+    rule: 'RunAsAny'
   seLinux:
-    rule: RunAsAny
+    # This policy assumes the nodes are using AppArmor rather than SELinux.
+    rule: 'RunAsAny'
   supplementalGroups:
     rule: 'MustRunAs'
     ranges:
-      - min: 1
+      # Allow adding the root group.
+      - min: 0
         max: 65535
   fsGroup:
     rule: 'MustRunAs'
     ranges:
-      - min: 1
+      # Allow adding the root group.
+      - min: 0
         max: 65535
-  volumes:
-  - 'secret'
-  - 'configMap'
-  - 'hostPath'
-  hostPID: true
-  hostIPC: true
-  hostNetwork: true
-  hostPorts:
-  - min: 1
-    max: 65536
+  readOnlyRootFilesystem: false
+{{- end }}
+{{- end }}
