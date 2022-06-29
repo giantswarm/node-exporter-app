@@ -1,9 +1,10 @@
+//go:build k8srequired
 // +build k8srequired
 
 package key
 
 func AppName() string {
-	return "node-exporter"
+	return "node-exporter-app"
 }
 
 func CRName() string {
