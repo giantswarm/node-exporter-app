@@ -180,6 +180,7 @@ extraArgs:
   - '--collector.diskstats'
   - '--collector.edac'
   - '--collector.entropy'
+  - '--collector.ethtool'
   - '--collector.filefd'
   - '--collector.filesystem'
   - '--collector.hwmon'

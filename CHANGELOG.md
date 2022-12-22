@@ -7,6 +7,8 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ## [Unreleased]
 
+- Enable `ethtool` collector.
+
 ## [1.13.0] - 2022-06-27
 
 ### Changed
