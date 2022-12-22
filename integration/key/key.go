@@ -4,7 +4,7 @@
 package key
 
 func AppName() string {
-	return "node-exporter-app"
+	return "node-exporter"
 }
 
 func CRName() string {
