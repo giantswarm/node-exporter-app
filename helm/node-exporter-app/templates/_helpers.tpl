@@ -13,13 +13,13 @@ If release name contains chart name it will be used as a full name.
 */}}
 {{- define "prometheus-node-exporter.fullname" -}}
 {{- if .Values.fullnameOverride -}}
-{{- .Values.fullnameOverride | trunc 63 | trimSuffix "-" -}}
+{{- .Values.fullnameOverride | trunc 63 | trimSuffix "-app" -}}
 {{- else -}}
 {{- $name := default .Chart.Name .Values.nameOverride -}}
 {{- if contains $name .Release.Name -}}
-{{- .Release.Name | trunc 63 | trimSuffix "-" -}}
+{{- .Release.Name | trunc 63 | trimSuffix "-app" -}}
 {{- else -}}
-{{- printf "%s-%s" .Release.Name $name | trunc 63 | trimSuffix "-" -}}
+{{- printf "%s-%s" .Release.Name $name | trunc 63 | trimSuffix "-app" -}}
 {{- end -}}
 {{- end -}}
 {{- end -}}
@@ -44,7 +44,7 @@ giantswarm.io/service-type: "managed"
 Create chart name and version as used by the chart label.
 */}}
 {{- define "prometheus-node-exporter.chart" -}}
-{{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" -}}
+{{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-app" -}}
 {{- end -}}
 
 
