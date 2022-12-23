@@ -7,6 +7,8 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ## [Unreleased]
 
+- Rollback to v1.13.0
+
 ### Changed
 
 - Disable boot partition from the `filesystem` exporter.
