@@ -1,23 +1,19 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ template "prometheus-node-exporter.fullname" . }}
-  namespace: {{ template "prometheus-node-exporter.namespace" . }}
-{{- if .Values.service.annotations }}
+  name: {{ include "name" . }}
+  namespace: {{ include "resource.default.namespace" . }}
+  labels:
+    {{- include "labels.common" . | nindent 4 }}
+    giantswarm.io/service-type: "managed"
   annotations:
-{{ toYaml .Values.service.annotations | indent 4 }}
-{{- end }}
-  labels: {{ include "prometheus-node-exporter.labels" . | indent 4 }}
+    prometheus.io/port: "{{ .Values.port  }}"
+    prometheus.io/scheme: "http"
+    prometheus.io/scrape: "true"
 spec:
-  type: {{ .Values.service.type }}
   ports:
-    - port: {{ .Values.service.port }}
-    {{- if ( and (eq .Values.service.type "NodePort" ) (not (empty .Values.service.nodePort)) ) }}
-      nodePort: {{ .Values.service.nodePort }}
-    {{- end }}
-      targetPort: {{ .Values.service.targetPort }}
-      protocol: TCP
-      name: {{ .Values.service.portName }}
+  - port: {{ .Values.port }}
+    name: metrics
+    targetPort: metrics
   selector:
-    app: {{ template "prometheus-node-exporter.name" . }}
-    release: {{ .Release.Name }}
+    {{- include "labels.selector" . | nindent 4 }}

@@ -7,18 +7,6 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ## [Unreleased]
 
-## [1.14.1] - 2022-12-22
-
-### Fixed
-
-- Trim `-app` from names and labels
-
-## [1.14.0] - 2022-12-22
-
-- Enable `ethtool` collector.
-
-## [1.13.0] - 2022-06-27
-
 ### Changed
 
 - Disable boot partition from the `filesystem` exporter.
@@ -179,10 +167,7 @@ Note: Version number 1.0.0 was skipped to align the version with other default a
 - Separate pod security policy for node-exporter and node-exporter-migration workloads.
 - Security context with non-root user (`nobody`) for running node-exporter inside container.
 
-[Unreleased]: https://github.com/giantswarm/node-exporter-app/compare/v1.14.1...HEAD
-[1.14.1]: https://github.com/giantswarm/node-exporter-app/compare/v1.14.0...v1.14.1
-[1.14.0]: https://github.com/giantswarm/node-exporter-app/compare/v1.13.0...v1.14.0
-[1.13.0]: https://github.com/giantswarm/node-exporter-app/compare/v1.12.0...v1.13.0
+[Unreleased]: https://github.com/giantswarm/node-exporter-app/compare/v1.12.0...HEAD
 [1.12.0]: https://github.com/giantswarm/node-exporter-app/compare/v1.11.0...v1.12.0
 [1.11.0]: https://github.com/giantswarm/node-exporter-app/compare/v1.10.0...v1.11.0
 [1.10.0]: https://github.com/giantswarm/node-exporter-app/compare/v1.9.0...v1.10.0
