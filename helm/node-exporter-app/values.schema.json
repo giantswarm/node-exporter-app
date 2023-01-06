@@ -127,15 +127,7 @@
             "type": "object"
         },
         "podAnnotations": {
-            "type": "object",
-            "properties": {
-                "cluster-autoscaler.kubernetes.io/safe-to-evict": {
-                    "type": "string"
-                },
-                "container.apparmor.security.beta.kubernetes.io/node-exporter": {
-                    "type": "string"
-                }
-            }
+            "type": "object"
         },
         "podLabels": {
             "type": "object"
