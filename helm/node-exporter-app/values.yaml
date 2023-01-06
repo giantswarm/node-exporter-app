@@ -141,6 +141,10 @@ affinity: {}
 podAnnotations:
   # Fix for very slow GKE cluster upgrades
   cluster-autoscaler.kubernetes.io/safe-to-evict: "true"
+  # Fix duplicated monitoring.
+  # TBD: add reference to pmo scrape config
+  prometheus.io/scrape: "true"
+  giantswarm.io/monitoring: "true"
 
 # Extra labels to be added to node exporter pods
 podLabels: {}
