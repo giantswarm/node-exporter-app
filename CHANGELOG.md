@@ -9,7 +9,7 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ### Fixed
 
-- Fix duplicated monitoring.
+- Fix duplicate scrapping by GiantSwarm Prometheus
 
 ## [1.14.1] - 2022-12-22
 
