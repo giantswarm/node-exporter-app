@@ -7,6 +7,14 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ## [Unreleased]
 
+### Added
+
+- Add values schema
+
+### Fixed
+
+- Fix collector `systemd`
+
 ## [1.14.1] - 2022-12-22
 
 ### Fixed
