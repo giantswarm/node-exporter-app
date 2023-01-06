@@ -145,8 +145,7 @@ podAnnotations:
   # see: https://github.com/giantswarm/node-exporter-app/pull/171
   prometheus.io/scrape: "true"
   giantswarm.io/monitoring: "true"
-  # Fix for collector systemd
-  container.apparmor.security.beta.kubernetes.io/node-exporter: "unconfined"
+
 
 # Extra labels to be added to node exporter pods
 podLabels: {}
