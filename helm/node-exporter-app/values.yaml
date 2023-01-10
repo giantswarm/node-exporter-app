@@ -143,6 +143,10 @@ podAnnotations:
   cluster-autoscaler.kubernetes.io/safe-to-evict: "true"
   # Fix for collector systemd
   container.apparmor.security.beta.kubernetes.io/node-exporter: "unconfined"
+  # Fix duplicate scrapping by Prometheus
+  # see: https://github.com/giantswarm/node-exporter-app/pull/171
+  prometheus.io/scrape: "true"
+  giantswarm.io/monitoring: "true"
 
 # Extra labels to be added to node exporter pods
 podLabels: {}

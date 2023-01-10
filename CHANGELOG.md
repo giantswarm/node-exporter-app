@@ -10,6 +10,7 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 ### Fixed
 
 - Fix collector `systemd`
+- Fix duplicate scrapping by GiantSwarm Prometheus
 
 ### Added
 
