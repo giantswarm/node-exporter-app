@@ -7,6 +7,8 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ## [Unreleased]
 
+## [1.15.0] - 2023-01-11
+
 ### Fixed
 
 - Fix collector `systemd`
@@ -188,7 +190,8 @@ Note: Version number 1.0.0 was skipped to align the version with other default a
 - Separate pod security policy for node-exporter and node-exporter-migration workloads.
 - Security context with non-root user (`nobody`) for running node-exporter inside container.
 
-[Unreleased]: https://github.com/giantswarm/node-exporter-app/compare/v1.14.1...HEAD
+[Unreleased]: https://github.com/giantswarm/node-exporter-app/compare/v1.15.0...HEAD
+[1.15.0]: https://github.com/giantswarm/node-exporter-app/compare/v1.14.1...v1.15.0
 [1.14.1]: https://github.com/giantswarm/node-exporter-app/compare/v1.14.0...v1.14.1
 [1.14.0]: https://github.com/giantswarm/node-exporter-app/compare/v1.13.0...v1.14.0
 [1.13.0]: https://github.com/giantswarm/node-exporter-app/compare/v1.12.0...v1.13.0
