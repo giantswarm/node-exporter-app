@@ -1,0 +1,82 @@
+name: Changelog link
+on:
+  push:
+    branches:
+      - 'legacy#release#v*.*.*'
+      - 'main#release#v*.*.*'
+      - 'main#release#major'
+      - 'main#release#minor'
+      - 'main#release#patch'
+      - 'master#release#v*.*.*'
+      - 'master#release#major'
+      - 'master#release#minor'
+      - 'master#release#patch'
+      - 'release#v*.*.*'
+      - 'release#major'
+      - 'release#minor'
+      - 'release#patch'
+      - 'release-v*.*.x#release#v*.*.*'
+      # "!" negates previous positive patterns so it has to be at the end.
+      - '!release-v*.x.x#release#v*.*.*'
+jobs:
+  debug_info:
+    name: Debug info
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Print github context JSON
+        run: |
+          cat <<EOF
+          ${{ toJson(github) }}
+          EOF
+  add_changelog_link:
+    name: Add changelog link
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Get Changelog Entry
+        id: changelog_reader
+        uses: mindsers/changelog-reader-action@v2
+        with:
+          version: "Unreleased"
+          path: ./CHANGELOG.md
+      - name: Gather facts
+        id: gather_facts
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+        run: |
+          ## ME
+
+          # Get changed line in CHANGELOG
+          lines=$(git diff --no-prefix -U0 $(git merge-base HEAD origin/HEAD)..HEAD -- CHANGELOG.md|tail +6|awk -F'^[+]' '{print $2}')
+
+          # Skip when no changes are detected
+          # Skip when more than 1 line are changed #Remove maybe?
+          if [[ $(echo "$lines" | wc -l) -ne 1 ]]; then
+            echo "> skipping changelog link update; no or too many detected lines"
+            exit 0
+          fi
+
+          # Skip when change line is not part of the unreleased changelog entries
+          if ! echo "${{ steps.changelog_reader.outputs.changes }}" | grep -q "$lines"; then
+            echo "> skipping changelog link; detected line not from unreleased entries"
+            exit 0
+          fi
+
+          # Skip when changelog link was already added
+          if echo "$lines" | grep -qE '\s\(#[[:digit:]]+\)$'; then
+            echo "> skipping changelog link; link already added"
+            exit 0
+          fi
+
+          # Get PR link
+          gh auth login --with-token <<<$(echo -n ${{ secrets.GITHUB_TOKEN }})
+          gh pr view --repo ${{ github.repository }} ${{ github.event.ref }}
+  push_changes:
+    name: Push changes
+    runs-on: ubuntu-20.04
+    needs:
+      - gather_facts
+    if: ${{ needs.gather_facts.outputs.skip != 'true' }}
+    steps:
+      - name: Placeholder
+        run: |
+          echo placeholder
