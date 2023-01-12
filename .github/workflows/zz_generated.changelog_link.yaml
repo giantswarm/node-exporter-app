@@ -19,6 +19,8 @@ jobs:
     name: Add changelog link
     runs-on: ubuntu-20.04
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
       - name: Get Unreleased changelog entries
         id: changelog_reader
         uses: mindsers/changelog-reader-action@v2
