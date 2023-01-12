@@ -66,6 +66,19 @@ jobs:
           pr_number=$(gh pr view --repo ${{ github.repository }} "$branch" --json number --jq .number)
 
           sed -i 's/'"$line"'/'"$line (#$pr_number)"'/' CHANGELOG.md
+      - name: Set up git identity
+        run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+      - name: Commit changes
+        run: |
+          git add CHANGELOG.md
+          git commit -m "add pull request reference in changelog"
+      - name: Push changes
+        env:
+          remote_repo: "https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
+        run: |
+          git push "${remote_repo}" HEAD:${{ github.event.ref }}
   push_changes:
     name: Push changes
     runs-on: ubuntu-20.04
