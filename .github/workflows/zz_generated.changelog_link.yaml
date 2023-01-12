@@ -29,8 +29,6 @@ jobs:
           path: ./CHANGELOG.md
       - name: Add changelog link
         id: add_changelog_link
-        env:
-          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
         run: |
           ## ME
 
