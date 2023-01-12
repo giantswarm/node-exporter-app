@@ -38,7 +38,7 @@ jobs:
 
           # Fetch base branch
           base=$(gh pr view --repo ${{ github.repository }} "$branch" --json baseRefName --jq .baseRefName)
-          git fetch -v origin "$base"
+          git fetch origin "$base"
 
           # Get changed line in CHANGELOG
           lines=$(git diff --no-prefix -U0 $(git merge-base HEAD origin/${{ github.event.repository.default_branch }})..HEAD -- CHANGELOG.md|tail +6|awk -F'^[+]' '{print $2}')
