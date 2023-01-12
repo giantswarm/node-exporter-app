@@ -19,14 +19,14 @@ jobs:
     name: Add changelog link
     runs-on: ubuntu-20.04
     steps:
-      - name: Get Changelog Entry
+      - name: Get Unreleased changelog entries
         id: changelog_reader
         uses: mindsers/changelog-reader-action@v2
         with:
           version: "Unreleased"
           path: ./CHANGELOG.md
-      - name: Gather facts
-        id: gather_facts
+      - name: Add changelog link
+        id: add_changelog_link
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
         run: |
@@ -61,8 +61,7 @@ jobs:
     name: Push changes
     runs-on: ubuntu-20.04
     needs:
-      - gather_facts
-    if: ${{ needs.gather_facts.outputs.skip != 'true' }}
+      - add_changelog_link
     steps:
       - name: Placeholder
         run: |
