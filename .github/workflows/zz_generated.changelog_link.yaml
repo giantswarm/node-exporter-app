@@ -63,7 +63,9 @@ jobs:
           fi
 
           # Get PR link
-          gh pr view --repo ${{ github.repository }} "$branch" --json number --jq .number
+          pr_number=$(gh pr view --repo ${{ github.repository }} "$branch" --json number --jq .number)
+
+          sed -i 's/'"$line"'/'"$line (#$pr_number)"'/' CHANGELOG.md
   push_changes:
     name: Push changes
     runs-on: ubuntu-20.04
