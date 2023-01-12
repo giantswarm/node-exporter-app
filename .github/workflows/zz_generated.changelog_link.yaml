@@ -30,6 +30,16 @@ jobs:
       - name: Add changelog link
         id: add_changelog_link
         run: |
+          branch="${{ github.event.ref }}"
+          branch="${branch#refs/heads/}" # Strip "refs/heads/" prefix.
+
+          # Authenticate gh
+          gh auth login --with-token <<<$(echo -n ${{ secrets.GITHUB_TOKEN }})
+
+          # Fetch base branch
+          base=$(gh pr view --repo ${{ github.repository }} "$branch" --json baseRefName --jq .baseRefName)
+          git fetch -v origin "$base"
+
           # Get changed line in CHANGELOG
           lines=$(git diff --no-prefix -U0 $(git merge-base HEAD origin/${{ github.event.repository.default_branch }})..HEAD -- CHANGELOG.md|tail +6|awk -F'^[+]' '{print $2}')
 
@@ -53,9 +63,6 @@ jobs:
           fi
 
           # Get PR link
-          gh auth login --with-token <<<$(echo -n ${{ secrets.GITHUB_TOKEN }})
-          branch="${{ github.event.ref }}"
-          branch="${branch#refs/heads/}" # Strip "refs/heads/" prefix.
           gh pr view --repo ${{ github.repository }} "$branch" --json number --jq .number
   push_changes:
     name: Push changes
