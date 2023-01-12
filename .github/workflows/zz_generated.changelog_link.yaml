@@ -56,7 +56,9 @@ jobs:
 
           # Get PR link
           gh auth login --with-token <<<$(echo -n ${{ secrets.GITHUB_TOKEN }})
-          gh pr view --repo ${{ github.repository }} ${{ github.event.ref }}
+          branch="${{ github.event.ref }}"
+          branch="${branch#refs/heads/}" # Strip "refs/heads/" prefix.
+          gh pr view --repo ${{ github.repository }} "$branch" --json number --jq .number
   push_changes:
     name: Push changes
     runs-on: ubuntu-20.04
