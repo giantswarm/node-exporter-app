@@ -45,6 +45,7 @@ jobs:
 
           # Skip when no changes are detected
           # Skip when more than 1 line are changed #Remove maybe?
+          echo "$lines"|wc -l
           if [[ $(echo "$lines" | wc -l) -ne 1 ]]; then
             echo "> skipping changelog link update; no or too many detected lines"
             exit 0
@@ -67,6 +68,7 @@ jobs:
 
           echo "$lines"
           sed --version
+          set -x
           sed -i 's/'"$lines"'/'"$lines (#$pr_number)"'/' CHANGELOG.md
       - name: Set up git identity
         run: |
