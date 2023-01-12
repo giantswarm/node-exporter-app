@@ -70,25 +70,15 @@ jobs:
           sed --version
           set -x
           sed -i 's/'"$lines"'/'"$lines (#$pr_number)"'/' CHANGELOG.md
-      - name: Set up git identity
-        run: |
+
+          # Set git identity
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-      - name: Commit changes
-        run: |
+
+          # Commit changes
           git add CHANGELOG.md
           git commit -m "add pull request reference in changelog"
-      - name: Push changes
-        env:
-          remote_repo: "https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
-        run: |
+
+          # Push changes
+          remote_repo="https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
           git push "${remote_repo}" HEAD:${{ github.event.ref }}
-  push_changes:
-    name: Push changes
-    runs-on: ubuntu-20.04
-    needs:
-      - add_changelog_link
-    steps:
-      - name: Placeholder
-        run: |
-          echo placeholder
