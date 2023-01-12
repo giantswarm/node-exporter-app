@@ -65,7 +65,7 @@ jobs:
           # Get PR link
           pr_number=$(gh pr view --repo ${{ github.repository }} "$branch" --json number --jq .number)
 
-          sed -i 's/'"$line"'/'"$line (#$pr_number)"'/' CHANGELOG.md
+          sed -i -e 's/'"$line"'/'"$line (#$pr_number)"'/' CHANGELOG.md
       - name: Set up git identity
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
