@@ -1,10 +1,10 @@
 name: Changelog link
 on:
   push:
-    branches:
-      - '!legacy#*'
-      - '!*#release#*'
-      - '!release#*'
+    branches-ignore:
+      - 'legacy#*'
+      - '*#release#*'
+      - 'release#*'
 jobs:
   debug_info:
     name: Debug info
