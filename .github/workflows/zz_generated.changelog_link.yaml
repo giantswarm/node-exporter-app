@@ -34,20 +34,20 @@ jobs:
           branch="${branch#refs/heads/}" # Strip "refs/heads/" prefix.
 
           # Authenticate gh
-          gh auth login --with-token <<<$(echo -n ${{ secrets.GITHUB_TOKEN }})
+          gh auth login --with-token <<<$(echo -n "${{ secrets.GITHUB_TOKEN }}")
 
           # Fetch base branch
-          base=$(gh pr view --repo ${{ github.repository }} "$branch" --json baseRefName --jq .baseRefName)
+          base="$(gh pr view --repo "${{ github.repository }}" "$branch" --json baseRefName --jq .baseRefName)"
           git fetch origin "$base"
 
           # Get changed line in CHANGELOG
-          lines=$(git diff --no-prefix -U0 $(git merge-base HEAD origin/${{ github.event.repository.default_branch }})..HEAD -- CHANGELOG.md|tail +6|awk -F'^[+]' '{print $2}')
+          lines="$(git diff --no-prefix -U0 "$(git merge-base HEAD origin/"${{ github.event.repository.default_branch }}")"..HEAD -- CHANGELOG.md | tail +6 | awk -F'^[+]' '{print $2}')"
 
           #TODO: compute target line to be changed from git diff patch line number
 
           # Skip when no changes are detected
           # Skip when more than 1 line are changed #Remove maybe?
-          echo -n "$lines"|wc -l
+          echo -n "$lines" | wc -l
           if [[ $(echo -n "$lines" | wc -l) -ne 1 ]]; then
             echo "> skipping changelog link update; no or too many detected lines"
             exit 0
