@@ -1,3 +1,4 @@
+{{- if le (int .Capabilities.KubeVersion.Minor) 24 }}
 {{- if .Values.rbac.create }}
 {{- if .Values.rbac.pspEnabled }}
 apiVersion: policy/v1beta1
@@ -46,5 +47,6 @@ spec:
       - min: 0
         max: 65535
   readOnlyRootFilesystem: false
+{{- end }}
 {{- end }}
 {{- end }}
