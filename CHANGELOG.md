@@ -7,6 +7,8 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ## [Unreleased]
 
+## [1.16.1] - 2023-06-02
+
 ### Changed
 
 - Enable service monitor.
@@ -207,7 +209,8 @@ Note: Version number 1.0.0 was skipped to align the version with other default a
 - Separate pod security policy for node-exporter and node-exporter-migration workloads.
 - Security context with non-root user (`nobody`) for running node-exporter inside container.
 
-[Unreleased]: https://github.com/giantswarm/node-exporter-app/compare/v1.16.0...HEAD
+[Unreleased]: https://github.com/giantswarm/node-exporter-app/compare/v1.16.1...HEAD
+[1.16.1]: https://github.com/giantswarm/node-exporter-app/compare/v1.16.0...v1.16.1
 [1.16.0]: https://github.com/giantswarm/node-exporter-app/compare/v1.15.1...v1.16.0
 [1.15.1]: https://github.com/giantswarm/node-exporter-app/compare/v1.15.0...v1.15.1
 [1.15.0]: https://github.com/giantswarm/node-exporter-app/compare/v1.14.1...v1.15.0
