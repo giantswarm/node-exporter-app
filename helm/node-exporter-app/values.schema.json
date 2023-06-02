@@ -127,7 +127,15 @@
             "type": "object"
         },
         "podAnnotations": {
-            "type": "object"
+            "type": "object",
+            "properties": {
+                "cluster-autoscaler.kubernetes.io/safe-to-evict": {
+                    "type": "string"
+                },
+                "container.apparmor.security.beta.kubernetes.io/node-exporter": {
+                    "type": "string"
+                }
+            }
         },
         "podLabels": {
             "type": "object"
@@ -148,7 +156,7 @@
                             "type": "object"
                         },
                         "bearerTokenFile": {
-                            "type": ["string", "null"]
+                            "type": "null"
                         },
                         "enabled": {
                             "type": "boolean"
@@ -287,22 +295,11 @@
         "service": {
             "type": "object",
             "properties": {
-                "annotations": {
-                    "type": "object",
-                    "properties": {
-                        "giantswarm.io/monitoring": {
-                            "type": "string"
-                        },
-                        "prometheus.io/scrape": {
-                            "type": "string"
-                        }
-                    }
-                },
                 "listenOnAllInterfaces": {
                     "type": "boolean"
                 },
                 "nodePort": {
-                    "type": ["string", "null"]
+                    "type": "null"
                 },
                 "port": {
                     "type": "integer"
@@ -334,7 +331,7 @@
                     "type": "array"
                 },
                 "name": {
-                    "type": ["string", "null"]
+                    "type": "null"
                 }
             }
         },
