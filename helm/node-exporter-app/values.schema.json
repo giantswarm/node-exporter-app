@@ -335,6 +335,14 @@
                 }
             }
         },
+        "serviceMonitor": {
+            "type": "object",
+            "properties": {
+                "namespace": {
+                    "type": "string"
+                }
+            }
+        },
         "sidecarVolumeMount": {
             "type": "array"
         },
