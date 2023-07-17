@@ -23,6 +23,9 @@ env: {}
 ##  env:
 ##    VARIABLE: value
 
+serviceMonitor:
+  namespace: monitoring
+
 prometheus:
   monitor:
     enabled: true
