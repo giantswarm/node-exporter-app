@@ -7,6 +7,10 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ## [Unreleased]
 
+### Changed
+
+- Namespace for servicemonitor changed.
+
 ## [1.16.1] - 2023-06-02
 
 ### Changed
