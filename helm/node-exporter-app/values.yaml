@@ -24,7 +24,7 @@ env: {}
 ##    VARIABLE: value
 
 serviceMonitor:
-  namespace: monitoring
+  namespace: giantswarm
 
 prometheus:
   monitor:
