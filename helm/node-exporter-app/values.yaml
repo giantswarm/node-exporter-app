@@ -23,14 +23,11 @@ env: {}
 ##  env:
 ##    VARIABLE: value
 
-serviceMonitor:
-  namespace: giantswarm
-
 prometheus:
   monitor:
     enabled: true
     additionalLabels: {}
-    namespace: ""
+    namespace: "giantswarm"
 
     jobLabel: ""
 
