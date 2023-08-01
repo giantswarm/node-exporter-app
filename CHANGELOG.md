@@ -9,7 +9,7 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ### Changed
 
-- revert changes on servicemonitor
+- fix apparmor annotation
 
 ## [1.17.0] - 2023-08-01
 
