@@ -170,8 +170,6 @@ affinity: {}
 podAnnotations:
   # Fix for very slow GKE cluster upgrades
   cluster-autoscaler.kubernetes.io/safe-to-evict: "true"
-  # Fix for collector systemd
-  container.apparmor.security.beta.kubernetes.io/node-exporter: "unconfined"
 
 # Extra labels to be added to node exporter pods
 podLabels: {}

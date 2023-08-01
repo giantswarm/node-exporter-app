@@ -7,6 +7,10 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ## [Unreleased]
 
+### Changed
+
+- fix apparmor annotation
+
 ## [1.17.0] - 2023-08-01
 
 ### Added
