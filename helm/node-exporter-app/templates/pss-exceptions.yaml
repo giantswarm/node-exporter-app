@@ -2,7 +2,7 @@
 apiVersion: kyverno.io/v2alpha1
 kind: PolicyException
 metadata:
-  name: {{ template "prometheus-node-exporter.fullname" . }}
+  name: {{ template "prometheus-node-exporter.fullname" . }}-exceptions
   namespace: {{ template "prometheus-node-exporter.namespace" . }}
 spec:
   exceptions:
