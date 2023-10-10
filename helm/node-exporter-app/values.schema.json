@@ -55,6 +55,19 @@
         "extraInitContainers": {
             "type": "array"
         },
+        "global": {
+            "type": "object",
+            "properties": {
+                "podSecurityStandards": {
+                    "type": "object",
+                    "properties": {
+                        "enforced": {
+                            "type": "boolean"
+                        }
+                    }
+                }
+            }
+        },
         "hostNetwork": {
             "type": "boolean"
         },
@@ -131,9 +144,6 @@
             "properties": {
                 "cluster-autoscaler.kubernetes.io/safe-to-evict": {
                     "type": "string"
-                },
-                "container.apparmor.security.beta.kubernetes.io/node-exporter": {
-                    "type": "string"
                 }
             }
         },
@@ -177,7 +187,33 @@
                             "type": "string"
                         },
                         "relabelings": {
-                            "type": "array"
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "action": {
+                                        "type": "string"
+                                    },
+                                    "regex": {
+                                        "type": "string"
+                                    },
+                                    "replacement": {
+                                        "type": "string"
+                                    },
+                                    "separator": {
+                                        "type": "string"
+                                    },
+                                    "sourceLabels": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "targetLabel": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
                         },
                         "scheme": {
                             "type": "string"
@@ -198,14 +234,8 @@
         "rbac": {
             "type": "object",
             "properties": {
-                "create": {
-                    "type": "boolean"
-                },
                 "pspAnnotations": {
                     "type": "object"
-                },
-                "pspEnabled": {
-                    "type": "boolean"
                 }
             }
         },
