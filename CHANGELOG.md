@@ -7,6 +7,10 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ## [Unreleased]
 
+### Changed
+
+- Make PolicyException namespace configurable.
+
 ## [1.18.0] - 2023-10-18
 
 ### Changed

@@ -1,9 +1,10 @@
+{{- if .Values.kyvernoPolicyExceptions.enabled }}
 {{- if .Capabilities.APIVersions.Has "kyverno.io/v2alpha1/PolicyException" }}
 apiVersion: kyverno.io/v2alpha1
 kind: PolicyException
 metadata:
   name: {{ template "prometheus-node-exporter.fullname" . }}-exceptions
-  namespace: {{ template "prometheus-node-exporter.namespace" . }}
+  namespace: {{ .Values.kyvernoPolicyExceptions.namespace | default (include "prometheus-node-exporter.namespace" .) }}
 spec:
   exceptions:
   - policyName: disallow-capabilities-strict 
@@ -52,4 +53,5 @@ spec:
         - {{ template "prometheus-node-exporter.namespace" . }}
         names:
         - {{ template "prometheus-node-exporter.fullname" . }}*
+{{- end }}
 {{- end }}
