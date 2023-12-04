@@ -23,6 +23,11 @@ env: {}
 ##  env:
 ##    VARIABLE: value
 
+# Enable Kyverno Policy Exceptions
+kyvernoPolicyExceptions:
+  enabled: true
+  namespace: giantswarm
+
 prometheus:
   monitor:
     enabled: true

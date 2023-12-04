@@ -102,6 +102,17 @@
         "imagePullSecrets": {
             "type": "array"
         },
+        "kyvernoPolicyExceptions": {
+            "type": "object",
+            "properties": {
+                "enabled": {
+                    "type": "boolean"
+                },
+                "namespace": {
+                    "type": "string"
+                }
+            }
+        },
         "livenessProbe": {
             "type": "object",
             "properties": {
