@@ -317,7 +317,7 @@ readinessProbe:
   timeoutSeconds: 1
 
 registry:
-  domain: docker.io
+  domain: gsoci.azurecr.io
 
 disableConntrackCollector: false
 disableNvmeCollector: false
