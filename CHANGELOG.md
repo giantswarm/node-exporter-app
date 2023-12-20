@@ -7,6 +7,8 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ## [Unreleased]
 
+## [1.18.2] - 2023-12-20
+
 ### Changed
 
 - Configure `gsoci.azurecr.io` as the default container image registry.
@@ -236,7 +238,8 @@ Note: Version number 1.0.0 was skipped to align the version with other default a
 - Separate pod security policy for node-exporter and node-exporter-migration workloads.
 - Security context with non-root user (`nobody`) for running node-exporter inside container.
 
-[Unreleased]: https://github.com/giantswarm/node-exporter-app/compare/v1.18.1...HEAD
+[Unreleased]: https://github.com/giantswarm/node-exporter-app/compare/v1.18.2...HEAD
+[1.18.2]: https://github.com/giantswarm/node-exporter-app/compare/v1.18.1...v1.18.2
 [1.18.1]: https://github.com/giantswarm/node-exporter-app/compare/v1.18.0...v1.18.1
 [1.18.0]: https://github.com/giantswarm/node-exporter-app/compare/v1.17.1...v1.18.0
 [1.17.1]: https://github.com/giantswarm/node-exporter-app/compare/v1.17.0...v1.17.1
