@@ -19,5 +19,5 @@ maintainers:
   - email: zanhsieh@gmail.com
     name: zanhsieh
 annotations:
-  application.giantswarm.io/team: turtles
+  application.giantswarm.io/team: phoenix
   config.giantswarm.io/version: 1.x.x
