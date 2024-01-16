@@ -329,4 +329,4 @@ global:
 verticalPodAutoscaler:
   minAllowed:
     cpu: 5m
-    memory: 15Mi
+    memory: 25Mi
