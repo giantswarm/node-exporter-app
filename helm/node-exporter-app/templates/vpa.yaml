@@ -1,0 +1,23 @@
+{{ if .Capabilities.APIVersions.Has "autoscaling.k8s.io/v1" }}
+apiVersion: autoscaling.k8s.io/v1
+kind: VerticalPodAutoscaler
+metadata:
+  name: {{ template "prometheus-node-exporter.fullname" . }}
+  namespace: {{ template "prometheus-node-exporter.namespace" . }}
+  labels: {{ include "prometheus-node-exporter.labels" . | indent 4 }}
+spec:
+  resourcePolicy:
+    containerPolicies:
+    - containerName: node-exporter
+      controlledValues: RequestsAndLimits
+      mode: Auto
+      minAllowed:
+        cpu: {{ .Values.verticalPodAutoscaler.minAllowed.cpu }}
+        memory: {{ .Values.verticalPodAutoscaler.minAllowed.memory }}
+  targetRef:
+    apiVersion: apps/v1
+    kind: DaemonSet
+    name: {{ template "prometheus-node-exporter.fullname" . }}
+  updatePolicy:
+    updateMode: Auto
+{{ end }}

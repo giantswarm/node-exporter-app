@@ -96,7 +96,7 @@ resources:
   limits:
     memory: 75Mi
   requests:
-    cpu: 75m
+    cpu: 25m
     memory: 50Mi
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little
@@ -325,3 +325,8 @@ disableNvmeCollector: false
 global:
   podSecurityStandards:
     enforced: false
+
+verticalPodAutoscaler:
+  minAllowed:
+    cpu: 5m
+    memory: 15Mi

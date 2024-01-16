@@ -7,6 +7,10 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ## [Unreleased]
 
+### Added
+
+- Add VPA configuration to `node-exporter` app.
+
 ## [1.18.2] - 2023-12-20
 
 ### Changed
