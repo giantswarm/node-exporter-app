@@ -7,6 +7,8 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ## [Unreleased]
 
+## [1.19.0] - 2024-01-17
+
 ### Added
 
 - Add VPA configuration to `node-exporter` app.
@@ -242,7 +244,8 @@ Note: Version number 1.0.0 was skipped to align the version with other default a
 - Separate pod security policy for node-exporter and node-exporter-migration workloads.
 - Security context with non-root user (`nobody`) for running node-exporter inside container.
 
-[Unreleased]: https://github.com/giantswarm/node-exporter-app/compare/v1.18.2...HEAD
+[Unreleased]: https://github.com/giantswarm/node-exporter-app/compare/v1.19.0...HEAD
+[1.19.0]: https://github.com/giantswarm/node-exporter-app/compare/v1.18.2...v1.19.0
 [1.18.2]: https://github.com/giantswarm/node-exporter-app/compare/v1.18.1...v1.18.2
 [1.18.1]: https://github.com/giantswarm/node-exporter-app/compare/v1.18.0...v1.18.1
 [1.18.0]: https://github.com/giantswarm/node-exporter-app/compare/v1.17.1...v1.18.0
