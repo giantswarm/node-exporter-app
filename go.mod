@@ -5,7 +5,7 @@ go 1.21
 toolchain go1.22.2
 
 require (
-	github.com/giantswarm/apptest v1.3.0
+	github.com/giantswarm/apptest v1.3.1
 	github.com/giantswarm/backoff v1.0.0
 	github.com/giantswarm/microerror v0.4.1
 	github.com/giantswarm/micrologger v1.1.1
@@ -19,7 +19,7 @@ require (
 	github.com/emicklei/go-restful/v3 v3.10.1 // indirect
 	github.com/evanphx/json-patch/v5 v5.6.0 // indirect
 	github.com/giantswarm/apiextensions-application v0.6.0 // indirect
-	github.com/giantswarm/appcatalog v0.10.1 // indirect
+	github.com/giantswarm/appcatalog v1.0.0 // indirect
 	github.com/giantswarm/k8smetadata v0.23.0 // indirect
 	github.com/go-kit/log v0.2.1 // indirect
 	github.com/go-logfmt/logfmt v0.6.0 // indirect
@@ -33,7 +33,7 @@ require (
 	github.com/google/gnostic-models v0.6.8 // indirect
 	github.com/google/gofuzz v1.2.0 // indirect
 	github.com/google/uuid v1.3.0 // indirect
-	github.com/imdario/mergo v0.3.13 // indirect
+	github.com/imdario/mergo v0.3.16 // indirect
 	github.com/josharian/intern v1.0.0 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect
 	github.com/mailru/easyjson v0.7.7 // indirect
@@ -46,8 +46,8 @@ require (
 	github.com/spf13/pflag v1.0.5 // indirect
 	golang.org/x/net v0.23.0 // indirect
 	golang.org/x/oauth2 v0.12.0 // indirect
-	golang.org/x/sys v0.18.0 // indirect
-	golang.org/x/term v0.18.0 // indirect
+	golang.org/x/sys v0.19.0 // indirect
+	golang.org/x/term v0.19.0 // indirect
 	golang.org/x/text v0.14.0 // indirect
 	golang.org/x/time v0.3.0 // indirect
 	google.golang.org/appengine v1.6.7 // indirect
@@ -64,5 +64,5 @@ require (
 	sigs.k8s.io/controller-runtime v0.14.1 // indirect
 	sigs.k8s.io/json v0.0.0-20221116044647-bc3834ca7abd // indirect
 	sigs.k8s.io/structured-merge-diff/v4 v4.4.1 // indirect
-	sigs.k8s.io/yaml v1.3.0 // indirect
+	sigs.k8s.io/yaml v1.4.0 // indirect
 )
