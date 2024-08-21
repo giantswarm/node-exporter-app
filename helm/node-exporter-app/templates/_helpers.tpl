@@ -59,8 +59,8 @@ release: {{ .Release.Name }}
 Selector labels
 */}}
 {{- define "prometheus-node-exporter.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "prometheus-node-exporter.name" . }}
-app.kubernetes.io/instance: {{ .Release.Name }}
+app: {{ include "prometheus-node-exporter.name" . }}
+release: {{ .Release.Name }}
 {{- end }}
 
 
