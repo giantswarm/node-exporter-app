@@ -7,6 +7,10 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ## [Unreleased]
 
+### Changed
+
+- Synced with upstream chart v4.38.0 (node-exporter 1.8.2).
+
 ## [1.19.0] - 2024-01-17
 
 ### Added
