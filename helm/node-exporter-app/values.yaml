@@ -90,6 +90,7 @@ kubeRBACProxy:
   #  memory: 32Mi
 
 service:
+  enabled: true
   type: ClusterIP
   clusterIP: ""
   port: 10300

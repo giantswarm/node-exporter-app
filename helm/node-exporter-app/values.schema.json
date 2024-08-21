@@ -463,6 +463,9 @@
                 "clusterIP": {
                     "type": "string"
                 },
+                "enabled": {
+                    "type": "boolean"
+                },
                 "externalTrafficPolicy": {
                     "type": "string"
                 },
