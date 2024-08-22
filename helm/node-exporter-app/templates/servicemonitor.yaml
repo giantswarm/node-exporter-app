@@ -1,23 +1,33 @@
 {{- if .Values.prometheus.monitor.enabled }}
-apiVersion: monitoring.coreos.com/v1
+apiVersion: {{ .Values.prometheus.monitor.apiVersion | default "monitoring.coreos.com/v1" }}
 kind: ServiceMonitor
 metadata:
-  name: {{ template "prometheus-node-exporter.fullname" . }}
-  namespace: {{ template "prometheus-node-exporter.monitor-namespace" . }}
-  labels: {{ include "prometheus-node-exporter.labels" . | indent 4 }}
-  {{- if .Values.prometheus.monitor.additionalLabels }}
-    {{- toYaml .Values.prometheus.monitor.additionalLabels | nindent 4 }}
-  {{- end }}
+  name: {{ include "prometheus-node-exporter.fullname" . }}
+  namespace: {{ include "prometheus-node-exporter.monitor-namespace" . }}
+  labels:
+    {{- include "prometheus-node-exporter.labels" . | nindent 4 }}
+    {{- with .Values.prometheus.monitor.additionalLabels }}
+    {{- toYaml . | nindent 4 }}
+    {{- end }}
 spec:
   jobLabel: {{ default "app.kubernetes.io/name" .Values.prometheus.monitor.jobLabel }}
+  {{- include "servicemonitor.scrapeLimits" .Values.prometheus.monitor | nindent 2 }}
+  {{- with .Values.prometheus.monitor.podTargetLabels }}
+  podTargetLabels:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
   selector:
     matchLabels:
-    {{- if .Values.prometheus.monitor.selectorOverride }}
-      {{ toYaml .Values.prometheus.monitor.selectorOverride | indent 6 }}
+    {{- with .Values.prometheus.monitor.selectorOverride }}
+      {{- toYaml . | nindent 6 }}
     {{ else }}
       app: {{ template "prometheus-node-exporter.name" . }}
       release: {{ .Release.Name }}
     {{- end }}
+  {{- with .Values.prometheus.monitor.attachMetadata }}
+  attachMetadata:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
   endpoints:
     - port: {{ .Values.service.portName }}
       scheme: {{ .Values.prometheus.monitor.scheme }}
