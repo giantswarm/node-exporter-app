@@ -7,6 +7,10 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ## [Unreleased]
 
+### Changed
+
+- Update Kyverno `PolicyExceptions` to `v2beta1`.
+
 ## [1.20.0] - 2024-08-22
 
 ### Changed
