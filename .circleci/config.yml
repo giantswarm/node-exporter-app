@@ -1,4 +1,5 @@
 version: 2.1
+
 orbs:
   architect: giantswarm/architect@5.11.0
 
@@ -9,19 +10,23 @@ workflows:
       - architect/push-to-app-catalog:
           context: architect
           name: push-to-default-app-catalog
-          app_catalog: "default-catalog"
-          app_catalog_test: "default-test-catalog"
-          chart: "node-exporter-app"
+          app_catalog: default-catalog
+          app_catalog_test: default-test-catalog
+          chart: node-exporter-app
           filters:
             # Trigger the job also on git tag.
             tags:
               only: /^v.*/
+            branches:
+              ignore:
+                - main
+                - master
 
       - architect/integration-test:
           context: architect
           name: basic-integration-test
           install-app-platform: true
-          test-dir: "integration/test/basic"
+          test-dir: integration/test/basic
           filters:
             # Do not trigger the job on merge to main.
             branches:
@@ -31,9 +36,9 @@ workflows:
             - push-to-default-app-catalog
 
       - architect/integration-test:
-          name: "upgrade-integration-test"
+          name: upgrade-integration-test
           install-app-platform: true
-          test-dir: "integration/test/upgrade"
+          test-dir: integration/test/upgrade
           filters:
             # Do not trigger the job on merge to main.
             branches:
@@ -45,19 +50,23 @@ workflows:
       - architect/push-to-app-catalog:
           context: architect
           name: push-node-exporter-to-control-plane-app-catalog
-          app_catalog: "control-plane-catalog"
-          app_catalog_test: "control-plane-test-catalog"
-          chart: "node-exporter-app"
+          app_catalog: control-plane-catalog
+          app_catalog_test: control-plane-test-catalog
+          chart: node-exporter-app
           filters:
             tags:
               only: /^v.*/
+            branches:
+              ignore:
+                - main
+                - master
 
       - architect/push-to-app-collection:
           context: architect
           name: push-node-exporter-to-aws-app-collection
-          app_name: "node-exporter-app"
-          app_namespace: "monitoring"
-          app_collection_repo: "aws-app-collection"
+          app_name: node-exporter-app
+          app_namespace: monitoring
+          app_collection_repo: aws-app-collection
           requires:
             - push-node-exporter-to-control-plane-app-catalog
           filters:
@@ -69,9 +78,9 @@ workflows:
       - architect/push-to-app-collection:
           context: architect
           name: push-node-exporter-to-azure-app-collection
-          app_name: "node-exporter-app"
-          app_namespace: "monitoring"
-          app_collection_repo: "azure-app-collection"
+          app_name: node-exporter-app
+          app_namespace: monitoring
+          app_collection_repo: azure-app-collection
           requires:
             - push-node-exporter-to-control-plane-app-catalog
           filters:
@@ -79,4 +88,3 @@ workflows:
               ignore: /.*/
             tags:
               only: /^v.*/
-
