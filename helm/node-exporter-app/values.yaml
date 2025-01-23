@@ -1,6 +1,7 @@
 # Default values for prometheus-node-exporter.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
+serviceType: managed
 registry:
   domain: gsoci.azurecr.io
 
