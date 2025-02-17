@@ -10,6 +10,7 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 ### Changed
 
 - Update Kyverno `PolicyExceptions` to `v2beta1`.
+- Go: Update `go.mod`. ([#322](https://github.com/giantswarm/node-exporter-app/pull/322))
 
 ## [1.20.0] - 2024-08-22
 
