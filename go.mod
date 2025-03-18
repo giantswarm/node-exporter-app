@@ -1,6 +1,6 @@
 module github.com/giantswarm/node-exporter-app
 
-go 1.24.0
+go 1.24.1
 
 require (
 	github.com/giantswarm/apptest v1.4.1
