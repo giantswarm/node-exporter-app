@@ -9,6 +9,10 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ## [1.20.3] - 2025-06-03
 
+### Changed
+
+- Go: Update dependencies.
+
 ## [1.20.2] - 2025-03-18
 
 ### Changed
