@@ -7,6 +7,8 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ## [Unreleased]
 
+## [1.20.4] - 2025-06-07
+
 ## [1.20.3] - 2025-06-03
 
 ### Changed
@@ -269,7 +271,8 @@ Note: Version number 1.0.0 was skipped to align the version with other default a
 - Separate pod security policy for node-exporter and node-exporter-migration workloads.
 - Security context with non-root user (`nobody`) for running node-exporter inside container.
 
-[Unreleased]: https://github.com/giantswarm/node-exporter-app/compare/v1.20.3...HEAD
+[Unreleased]: https://github.com/giantswarm/node-exporter-app/compare/v1.20.4...HEAD
+[1.20.4]: https://github.com/giantswarm/node-exporter-app/compare/v1.20.3...v1.20.4
 [1.20.3]: https://github.com/giantswarm/node-exporter-app/compare/v1.20.2...v1.20.3
 [1.20.2]: https://github.com/giantswarm/node-exporter-app/compare/v1.20.1...v1.20.2
 [1.20.1]: https://github.com/giantswarm/node-exporter-app/compare/v1.20.0...v1.20.1
