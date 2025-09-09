@@ -7,6 +7,10 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ## [Unreleased]
 
+### Changed
+
+- Update Kyverno API to v2 for policy exceptions
+
 ## [1.20.5] - 2025-08-26
 
 ### Changed
