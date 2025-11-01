@@ -7,6 +7,8 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ## [Unreleased]
 
+## [1.20.8] - 2025-11-01
+
 ### Changed
 
 - Go: Update dependencies.
@@ -298,7 +300,8 @@ Note: Version number 1.0.0 was skipped to align the version with other default a
 - Separate pod security policy for node-exporter and node-exporter-migration workloads.
 - Security context with non-root user (`nobody`) for running node-exporter inside container.
 
-[Unreleased]: https://github.com/giantswarm/node-exporter-app/compare/v1.20.7...HEAD
+[Unreleased]: https://github.com/giantswarm/node-exporter-app/compare/v1.20.8...HEAD
+[1.20.8]: https://github.com/giantswarm/node-exporter-app/compare/v1.20.7...v1.20.8
 [1.20.7]: https://github.com/giantswarm/node-exporter-app/compare/v1.20.6...v1.20.7
 [1.20.6]: https://github.com/giantswarm/node-exporter-app/compare/v1.20.5...v1.20.6
 [1.20.5]: https://github.com/giantswarm/node-exporter-app/compare/v1.20.4...v1.20.5
