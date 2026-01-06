@@ -1,0 +1,9 @@
+checks:
+  exclude:
+    # Node exporter requires host access to collect system metrics
+    - host-network
+    - host-pid
+    - sensitive-host-mounts
+    # No anti-affinity needed for DaemonSet (runs on all nodes)
+    - no-anti-affinity
+
