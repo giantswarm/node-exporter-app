@@ -6,4 +6,6 @@ checks:
     - sensitive-host-mounts
     # No anti-affinity needed for DaemonSet (runs on all nodes)
     - no-anti-affinity
+    # Upstream node-exporter container configuration
+    - no-read-only-root-fs
 
