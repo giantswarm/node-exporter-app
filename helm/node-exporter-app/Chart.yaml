@@ -20,8 +20,8 @@ maintainers:
   - email: rootsandtrees@posteo.de
     name: zeritti
 annotations:
-  application.giantswarm.io/team: turtles
-  io.giantswarm.application.team: turtles
+  application.giantswarm.io/team: tenet
+  io.giantswarm.application.team: tenet
   config.giantswarm.io/version: 1.x.x
   "artifacthub.io/license": Apache-2.0
   "artifacthub.io/links": |
