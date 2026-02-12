@@ -45,7 +45,6 @@ app.kubernetes.io/version: {{ . | quote }}
 {{- end }}
 application.giantswarm.io/team: {{ index .Chart.Annotations "application.giantswarm.io/team" | quote }}
 giantswarm.io/service-type: "managed"
-app: {{ template "prometheus-node-exporter.name" . }}
 heritage: {{.Release.Service }}
 {{- with .Values.commonLabels }}
 {{ tpl (toYaml .) $ }}
