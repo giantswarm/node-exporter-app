@@ -7,6 +7,8 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ## [Unreleased]
 
+## [1.20.11] - 2026-02-16
+
 ### Changed
 
 - Migrate to App Build Suite (ABS) for building and publishing Helm charts.
@@ -320,7 +322,8 @@ Note: Version number 1.0.0 was skipped to align the version with other default a
 - Separate pod security policy for node-exporter and node-exporter-migration workloads.
 - Security context with non-root user (`nobody`) for running node-exporter inside container.
 
-[Unreleased]: https://github.com/giantswarm/node-exporter-app/compare/v1.20.10...HEAD
+[Unreleased]: https://github.com/giantswarm/node-exporter-app/compare/v1.20.11...HEAD
+[1.20.11]: https://github.com/giantswarm/node-exporter-app/compare/v1.20.10...v1.20.11
 [1.20.10]: https://github.com/giantswarm/node-exporter-app/compare/v1.20.9...v1.20.10
 [1.20.9]: https://github.com/giantswarm/node-exporter-app/compare/v1.20.8...v1.20.9
 [1.20.8]: https://github.com/giantswarm/node-exporter-app/compare/v1.20.7...v1.20.8
