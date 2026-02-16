@@ -11,6 +11,10 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 - Migrate to App Build Suite (ABS) for building and publishing Helm charts.
 
+### Fixed
+
+- Removed duplicated `app` label which is already added by the selector helper.
+
 ## [1.20.10] - 2025-12-19
 
 ### Removed
