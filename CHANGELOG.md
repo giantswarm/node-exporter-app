@@ -7,6 +7,10 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ## [Unreleased]
 
+### Changed
+
+- Chart: Move PolicyException to `kube-system` namespace.
+
 ## [1.20.11] - 2026-02-16
 
 ### Changed
