@@ -164,6 +164,7 @@
                     "type": "array"
                 },
                 "image": {
+                    "type": "object",
                     "properties": {
                         "pullPolicy": {
                             "type": "string"
@@ -180,8 +181,7 @@
                         "tag": {
                             "type": "string"
                         }
-                    },
-                    "type": "object"
+                    }
                 },
                 "port": {
                     "type": "integer"
@@ -276,14 +276,8 @@
                 "monitor": {
                     "type": "object",
                     "properties": {
-                        "additionalLabels": {
-                            "type": "object"
-                        },
                         "basicAuth": {
                             "type": "object"
-                        },
-                        "bearerTokenFile": {
-                            "type": "string"
                         },
                         "enabled": {
                             "type": "boolean"
@@ -476,10 +470,10 @@
                             "type": "boolean"
                         },
                         "ipFamilies": {
+                            "type": "array",
                             "items": {
                                 "type": "string"
-                            },
-                            "type": "array"
+                            }
                         },
                         "ipFamilyPolicy": {
                             "type": "string"
@@ -488,9 +482,6 @@
                 },
                 "listenOnAllInterfaces": {
                     "type": "boolean"
-                },
-                "nodePort": {
-                    "type": "integer"
                 },
                 "port": {
                     "type": "integer"
@@ -523,9 +514,6 @@
                 },
                 "imagePullSecrets": {
                     "type": "array"
-                },
-                "name": {
-                    "type": "string"
                 }
             }
         },
