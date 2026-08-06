@@ -7,6 +7,10 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ## [Unreleased]
 
+### Changed
+
+- CircleCI: Do not override app version.
+
 ## [1.20.12] - 2026-08-06
 
 ### Changed
