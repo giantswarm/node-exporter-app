@@ -7,6 +7,8 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ## [Unreleased]
 
+## [1.20.13] - 2026-08-07
+
 ### Changed
 
 - CircleCI: Do not override app version.
@@ -332,7 +334,8 @@ Note: Version number 1.0.0 was skipped to align the version with other default a
 - Separate pod security policy for node-exporter and node-exporter-migration workloads.
 - Security context with non-root user (`nobody`) for running node-exporter inside container.
 
-[Unreleased]: https://github.com/giantswarm/node-exporter-app/compare/v1.20.12...HEAD
+[Unreleased]: https://github.com/giantswarm/node-exporter-app/compare/v1.20.13...HEAD
+[1.20.13]: https://github.com/giantswarm/node-exporter-app/compare/v1.20.12...v1.20.13
 [1.20.12]: https://github.com/giantswarm/node-exporter-app/compare/v1.20.11...v1.20.12
 [1.20.11]: https://github.com/giantswarm/node-exporter-app/compare/v1.20.10...v1.20.11
 [1.20.10]: https://github.com/giantswarm/node-exporter-app/compare/v1.20.9...v1.20.10
