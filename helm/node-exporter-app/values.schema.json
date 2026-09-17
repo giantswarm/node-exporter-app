@@ -23,6 +23,9 @@
         "disableNvmeCollector": {
             "type": "boolean"
         },
+        "disableSystemdCollector": {
+            "type": "boolean"
+        },
         "dnsConfig": {
             "type": "object"
         },
