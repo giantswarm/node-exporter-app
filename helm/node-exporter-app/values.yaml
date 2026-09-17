@@ -357,7 +357,6 @@ extraArgs:
   - '--collector.netstat'
   - '--collector.sockstat'
   - '--collector.stat'
-  - '--collector.systemd'
   - '--collector.time'
   - '--collector.timex'
   - '--collector.uname'
@@ -509,3 +508,8 @@ version: ""
 
 disableConntrackCollector: false
 disableNvmeCollector: false
+# The systemd collector needs a D-Bus connection to the host. On nodes where
+# AppArmor mediates D-Bus (for example AKS Ubuntu nodes, where the container
+# runs under the default containerd profile) that connection is refused and the
+# collector fails on every scrape, so it can be turned off here.
+disableSystemdCollector: false

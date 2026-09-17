@@ -7,6 +7,10 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ## [Unreleased]
 
+### Added
+
+- `disableSystemdCollector` value to turn the systemd collector off, mirroring the existing `disableConntrackCollector` and `disableNvmeCollector` toggles. The collector needs a D-Bus connection to the host, which is refused on nodes where AppArmor mediates D-Bus (such as AKS Ubuntu nodes running under the default containerd profile), making it fail on every scrape. Defaults to `false`, so behaviour is unchanged.
+
 ## [1.20.13] - 2026-08-07
 
 ### Changed

@@ -66,6 +66,11 @@ spec:
             {{- else }}
             - --collector.conntrack
             {{- end }}
+            {{- if .Values.disableSystemdCollector }}
+            - --no-collector.systemd
+            {{- else }}
+            - --collector.systemd
+            {{- end }}
             {{- if .Values.disableNvmeCollector }}
             - --no-collector.nvme
             {{- end }}
