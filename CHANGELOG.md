@@ -7,6 +7,8 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ## [Unreleased]
 
+## [1.21.0] - 2026-09-17
+
 ### Added
 
 - `disableSystemdCollector` value to turn the systemd collector off, mirroring the existing `disableConntrackCollector` and `disableNvmeCollector` toggles. The collector needs a D-Bus connection to the host, which is refused on nodes where AppArmor mediates D-Bus (such as AKS Ubuntu nodes running under the default containerd profile), making it fail on every scrape. Defaults to `false`, so behaviour is unchanged.
@@ -338,7 +340,8 @@ Note: Version number 1.0.0 was skipped to align the version with other default a
 - Separate pod security policy for node-exporter and node-exporter-migration workloads.
 - Security context with non-root user (`nobody`) for running node-exporter inside container.
 
-[Unreleased]: https://github.com/giantswarm/node-exporter-app/compare/v1.20.13...HEAD
+[Unreleased]: https://github.com/giantswarm/node-exporter-app/compare/v1.21.0...HEAD
+[1.21.0]: https://github.com/giantswarm/node-exporter-app/compare/v1.20.13...v1.21.0
 [1.20.13]: https://github.com/giantswarm/node-exporter-app/compare/v1.20.12...v1.20.13
 [1.20.12]: https://github.com/giantswarm/node-exporter-app/compare/v1.20.11...v1.20.12
 [1.20.11]: https://github.com/giantswarm/node-exporter-app/compare/v1.20.10...v1.20.11
