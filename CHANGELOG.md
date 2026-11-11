@@ -7,6 +7,10 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ## [Unreleased]
 
+### Changed
+
+- The DaemonSet rolls out 10% of the pods at a time by default (`updateStrategy.rollingUpdate.maxUnavailable: "10%"`, previously `1`). Upgrades on large workload clusters now finish within the Helm timeout. `maxUnavailable` accepts an integer or a percentage.
+
 ### Fixed
 
 - The `helm.sh/chart` label is valid for long chart versions: the 63-character cut trims the whole trailing run of `-`, `.` and `_`.
