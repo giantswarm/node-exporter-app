@@ -7,6 +7,8 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ## [Unreleased]
 
+## [1.22.0-rc.1] - 2026-11-16
+
 ### Changed
 
 - The DaemonSet rolls out 10% of the pods at a time by default (`updateStrategy.rollingUpdate.maxUnavailable: "10%"`, previously `1`). Upgrades on large workload clusters now finish within the Helm timeout. `maxUnavailable` accepts an integer or a percentage.
@@ -348,7 +350,8 @@ Note: Version number 1.0.0 was skipped to align the version with other default a
 - Separate pod security policy for node-exporter and node-exporter-migration workloads.
 - Security context with non-root user (`nobody`) for running node-exporter inside container.
 
-[Unreleased]: https://github.com/giantswarm/node-exporter-app/compare/v1.21.0...HEAD
+[Unreleased]: https://github.com/giantswarm/node-exporter-app/compare/v1.22.0-rc.1...HEAD
+[1.22.0-rc.1]: https://github.com/giantswarm/node-exporter-app/compare/v1.21.0...v1.22.0-rc.1
 [1.21.0]: https://github.com/giantswarm/node-exporter-app/compare/v1.20.13...v1.21.0
 [1.20.13]: https://github.com/giantswarm/node-exporter-app/compare/v1.20.12...v1.20.13
 [1.20.12]: https://github.com/giantswarm/node-exporter-app/compare/v1.20.11...v1.20.12
