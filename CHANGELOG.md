@@ -7,6 +7,10 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ## [Unreleased]
 
+### Changed
+
+- Stop collecting per-node series nobody reads: pod network interfaces in the network and ethtool collectors, ethtool stats other than the AWS ENA allowance counters, systemd units other than the ones alerts and runbooks check, and the XFS collector (giantswarm/giantswarm#38930).
+
 ## [1.21.1] - 2026-11-16
 
 ### Changed
