@@ -361,8 +361,18 @@ extraArgs:
   - '--collector.timex'
   - '--collector.uname'
   - '--collector.vmstat'
-  - '--collector.xfs'
+  - '--no-collector.xfs'
   - '--collector.filesystem.mount-points-exclude=boot'
+  # Pod interfaces (Cilium lxc*, other CNIs veth* or 15 hex chars) are covered by cAdvisor's
+  # container_network_*; per-node series from them are read by nothing (giantswarm/giantswarm#38930).
+  - '--collector.netclass.ignored-devices=^(lxc.*|veth.*|[a-f0-9]{15})$'
+  - '--collector.netdev.device-exclude=^(lxc.*|veth.*|[a-f0-9]{15})$'
+  - '--collector.ethtool.device-exclude=^(lxc.*|veth.*|[a-f0-9]{15})$'
+  # Only the AWS ENA allowance counters are read (AWS ENA dashboard).
+  - '--collector.ethtool.metrics-include=^(bw_in_allowance_exceeded|bw_out_allowance_exceeded|conntrack_allowance_available|conntrack_allowance_exceeded|linklocal_allowance_exceeded|pps_allowance_exceeded)$'
+  # Units the systemd alerts and Muster runbooks check, plus sockets (read by customer node dashboards).
+  # node_systemd_units is computed before this filter and still counts every unit.
+  - '--collector.systemd.unit-include=(containerd|k8s-addons|kubelet|locksmithd|systemd-networkd|update-engine|update-engine-stub)\.service|.+\.socket'
   - '--no-collector.btrfs'
   - '--no-collector.infiniband'
   - '--no-collector.ipvs'
