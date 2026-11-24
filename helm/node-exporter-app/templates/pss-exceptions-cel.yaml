@@ -1,0 +1,46 @@
+{{- if .Values.kyvernoPolicyExceptions.enabled }}
+apiVersion: policies.kyverno.io/v1
+kind: PolicyException
+metadata:
+  name: {{ template "prometheus-node-exporter.fullname" . }}-exceptions
+  namespace: {{ .Values.kyvernoPolicyExceptions.namespace | default (include "prometheus-node-exporter.namespace" .) }}
+  annotations:
+    "helm.sh/hook": "pre-install,pre-upgrade"
+spec:
+  policyRefs:
+  - name: disallow-host-namespaces
+    kind: ValidatingPolicy
+  - name: disallow-host-ports
+    kind: ValidatingPolicy
+  - name: disallow-capabilities-strict
+    kind: ValidatingPolicy
+  - name: disallow-privilege-escalation
+    kind: ValidatingPolicy
+  - name: require-run-as-non-root-user
+    kind: ValidatingPolicy
+  - name: require-run-as-nonroot
+    kind: ValidatingPolicy
+  - name: disallow-host-path
+    kind: ValidatingPolicy
+  - name: restrict-volume-types
+    kind: ValidatingPolicy
+  - name: restrict-seccomp-strict
+    kind: ValidatingPolicy
+  # check-resources-request-and-limits-ratio is a supplemental policy and usually
+  # not enabled. It is excepted because the node-exporter DaemonSet fails it when
+  # the policy is enforced.
+  - name: check-resources-request-and-limits-ratio
+    kind: ValidatingPolicy
+  # require-ro-rootfs is a supplemental policy and usually not enabled. It is
+  # excepted because the node-exporter DaemonSet fails it when the policy is
+  # enforced.
+  - name: require-ro-rootfs
+    kind: ValidatingPolicy
+  matchConditions:
+  - name: node-exporter-workloads
+    expression: >-
+      request.kind.kind in ['DaemonSet', 'Pod'] &&
+      request.namespace == '{{ template "prometheus-node-exporter.namespace" . }}' &&
+      has(object.metadata.name) &&
+      (object.metadata.name == '{{ template "prometheus-node-exporter.fullname" . }}' || object.metadata.name.startsWith('{{ template "prometheus-node-exporter.fullname" . }}-'))
+{{- end }}

@@ -1,10 +1,12 @@
-{{- if .Values.kyvernoPolicyExceptions.enabled }}
+{{- if and .Values.kyvernoPolicyExceptions.enabled .Values.kyvernoPolicyExceptions.legacy.enabled }}
 {{- if .Capabilities.APIVersions.Has "kyverno.io/v2/PolicyException" }}
 apiVersion: kyverno.io/v2
 kind: PolicyException
 metadata:
   name: {{ template "prometheus-node-exporter.fullname" . }}-exceptions
   namespace: {{ .Values.kyvernoPolicyExceptions.namespace | default (include "prometheus-node-exporter.namespace" .) }}
+  labels:
+    policy.giantswarm.io/migrated-to-cel: "true"
 spec:
   exceptions:
   - policyName: disallow-host-namespaces
