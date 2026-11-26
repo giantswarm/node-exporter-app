@@ -7,6 +7,8 @@ and this project's packages adheres to [Semantic Versioning](http://semver.org/s
 
 ## [Unreleased]
 
+## [1.21.2] - 2026-11-26
+
 ### Added
 
 - Add a `policies.kyverno.io/v1` PolicyException next to the `kyverno.io/v2` one, so the exception also applies to the CEL (ValidatingPolicy) versions of the policies. The CEL one is always rendered; set `kyvernoPolicyExceptions.legacy.enabled: false` to stop rendering the legacy one.
@@ -355,7 +357,8 @@ Note: Version number 1.0.0 was skipped to align the version with other default a
 - Separate pod security policy for node-exporter and node-exporter-migration workloads.
 - Security context with non-root user (`nobody`) for running node-exporter inside container.
 
-[Unreleased]: https://github.com/giantswarm/node-exporter-app/compare/v1.21.1...HEAD
+[Unreleased]: https://github.com/giantswarm/node-exporter-app/compare/v1.21.2...HEAD
+[1.21.2]: https://github.com/giantswarm/node-exporter-app/compare/v1.21.1...v1.21.2
 [1.21.1]: https://github.com/giantswarm/node-exporter-app/compare/v1.21.0...v1.21.1
 [1.21.0]: https://github.com/giantswarm/node-exporter-app/compare/v1.20.13...v1.21.0
 [1.20.13]: https://github.com/giantswarm/node-exporter-app/compare/v1.20.12...v1.20.13
